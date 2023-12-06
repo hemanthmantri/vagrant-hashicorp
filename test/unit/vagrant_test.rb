@@ -2,7 +2,9 @@
 # SPDX-License-Identifier: BUSL-1.1
 
 require File.expand_path("../base", __FILE__)
-
+if ENV['TI'] == 1
+  require_relative '/tmp/engine/ruby/harness/ruby-agent/test_intelligence.rb'
+end
 describe Vagrant do
   include_context "unit"
 
